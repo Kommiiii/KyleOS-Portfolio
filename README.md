@@ -2,7 +2,7 @@
 
 A web-based portfolio simulating the Windows XP operating system environment, featuring interactive windows, taskbar navigation, and custom application themes.
 
-Test it out here: https://kommiiii.github.io/KyleOS/
+Test it out here: https://kommiiii.github.io/KyleOS-Portfolio/
 
 ## Key Features
 * **Custom OS Engine:** Vanilla JavaScript window manager (Z-indexing, dragging, taskbar tabs).
