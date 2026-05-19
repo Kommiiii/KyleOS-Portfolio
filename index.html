@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KyleOS - Portfolio</title>
+  <link rel="icon" type="image/png" href="img/icons/WindowsLogo.png">
+  <link rel="stylesheet" href="https://unpkg.com/xp.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <div id="desktop">
+
+    <div class="desktop-icons-grid">
+      <button type="button" class="desktop-icon" onclick="openOsWindow('stage-profile')">
+        <img src="img/icons/MsWord.png" width="40" height="40" alt="Profile">
+        <span>Profile.doc</span>
+      </button>
+      <button type="button" class="desktop-icon" onclick="openOsWindow('stage-projects')">
+        <img src="img/icons/InternetExplorer.png" width="40" height="40" alt="Portfolio">
+        <span>Portfolio.html</span>
+      </button>
+      <button type="button" class="desktop-icon" onclick="openOsWindow('stage-contact')">
+        <img src="img/icons/OutlookExpress.png" width="40" height="40" alt="Contact">
+        <span>Contact.exe</span>
+      </button>
+      <button type="button" class="desktop-icon" onclick="downloadCv()">
+        <img src="img/icons/PDF.png" width="40" height="40" alt="CV">
+        <span>My_CV.pdf</span>
+      </button>
+    </div>
+
+    <div class="os-window-container hidden" id="stage-profile">
+      <div class="window h-100 d-flex flex-column shadow-lg">
+        <div class="title-bar">
+          <div class="title-bar-text">
+            <img src="img/icons/MsWord.png" width="14" height="14" alt="" class="title-bar-icon" />
+            Profile.doc — Microsoft Word
+          </div>
+          <div class="title-bar-controls">
+            <button type="button" aria-label="Minimize" onclick="handleTaskbarClick('stage-profile')"></button>
+            <button type="button" aria-label="Maximize"></button>
+            <button type="button" aria-label="Close" onclick="closeOsWindow('stage-profile')"></button>
+          </div>
+        </div>
+        <div class="word-menu-bar d-flex flex-wrap">
+          <span class="word-menu-item"><u>F</u>ile</span>
+          <span class="word-menu-item"><u>E</u>dit</span>
+          <span class="word-menu-item"><u>V</u>iew</span>
+          <span class="word-menu-item"><u>I</u>nsert</span>
+          <span class="word-menu-item">F<u>o</u>rmat</span>
+          <span class="word-menu-item d-none d-sm-inline"><u>T</u>ools</span>
+          <span class="word-menu-item d-none d-sm-inline">T<u>a</u>ble</span>
+          <span class="word-menu-item d-none d-sm-inline"><u>W</u>indow</span>
+          <span class="word-menu-item d-none d-sm-inline"><u>H</u>elp</span>
+        </div>
+        <div class="window-body word-window-body flex-grow-1 overflow-auto">
+          <div class="ms-word-paper mx-auto">
+            <div class="word-doc-header text-center">
+
+              <div class="avatar-frame mx-auto">
+                <img src="img/KyleDungo.jpg" alt="Kyle Dungo" style="width: 100%; height: 100%; object-fit: cover;"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                <span class="avatar-placeholder" style="display: none;">[Photo]</span>
+              </div>
+
+              <h1 class="word-doc-name">Kyle Dungo</h1>
+              <p class="word-doc-role">2nd Year BSIT Student</p>
+            </div>
+            <p>Hi, I'm Kyle! As a 2nd-year Information Technology student at the <a href="https://ntc.edu.ph"
+                target="_blank">National Teachers College</a>, I’m an aspiring developer passionate about creating
+              digital projects that are as enjoyable to build as they are useful. This really resonates with what Albert
+              Einstein once said:</p>
+            <p><em>"I have no special talent. I am only passionately curious."</em> — <strong>Albert Einstein</strong>
+            </p>
+            <p><strong>My current toolkit includes:</strong></p>
+            <ul>
+              <li><strong>Programming:</strong> Java, C++, Python</li>
+              <li><strong>Web Development:</strong> HTML, CSS</li>
+              <li><strong>Design:</strong> Figma, Canva</li>
+              <li><strong>Hobbies:</strong> Photography, Gaming</li>
+            </ul>
+            <p>I am always looking for new challenges and collaborations. Feel free to reach out via the contact app on
+              my desktop. I would love to connect, I supposed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="os-window-container hidden" id="stage-projects">
+      <div class="window h-100 d-flex flex-column shadow-lg">
+        <div class="title-bar">
+          <div class="title-bar-text">
+            <img src="img/icons/InternetExplorer.png" width="14" height="14" alt="" class="title-bar-icon" />
+            Kyle Dungo Portfolio — Microsoft Internet Explorer
+          </div>
+          <div class="title-bar-controls">
+            <button type="button" aria-label="Minimize" onclick="handleTaskbarClick('stage-projects')"></button>
+            <button type="button" aria-label="Maximize"></button>
+            <button type="button" aria-label="Close" onclick="closeOsWindow('stage-projects')"></button>
+          </div>
+        </div>
+        <div class="ie-toolbar d-flex align-items-center flex-wrap gap-1 px-1 py-1 border-bottom">
+          <div class="ie-toolbar-nav d-flex gap-0">
+            <button type="button" class="ie-tb-btn" title="Back" disabled aria-label="Back">&#9664;</button>
+            <button type="button" class="ie-tb-btn" title="Forward" disabled aria-label="Forward">&#9654;</button>
+            <button type="button" class="ie-tb-btn" title="Stop" disabled aria-label="Stop">&#10005;</button>
+            <button type="button" class="ie-tb-btn" title="Refresh" aria-label="Refresh">&#8635;</button>
+            <button type="button" class="ie-tb-btn" title="Home" aria-label="Home">&#8962;</button>
+          </div>
+          <div class="ie-toolbar-divider" aria-hidden="true"></div>
+          <button type="button" class="ie-tb-btn ie-tb-btn--wide">Search</button>
+          <button type="button" class="ie-tb-btn ie-tb-btn--wide">Favorites</button>
+        </div>
+        <div class="ie-address-bar d-flex align-items-center gap-2 px-1 py-1 border-bottom">
+          <span class="ie-address-label">Address</span>
+          <div class="ie-address-field flex-grow-1 d-flex align-items-center">
+            <img src="img/icons/InternetExplorer.png" width="12" height="12" alt="">
+            <span class="ie-address-url">http://kyle-dev.local/portfolio</span>
+          </div>
+          <button type="button" class="ie-go-btn">Go</button>
+        </div>
+
+        <div class="window-body ie-browser-content overflow-auto flex-grow-1 d-flex flex-column p-0">
+          <main class="ie-page">
+            <header class="ie-page-banner">
+              <img src="img/icons/InternetExplorer.png" width="32" height="32" alt="">
+              <div>
+                <h1 class="ie-page-title">My Portfolio</h1>
+                <p class="ie-page-subtitle">A collection of things I've created and photos I've taken as a hobby.</p>
+              </div>
+            </header>
+
+            <div class="ie-filter-panel d-flex flex-column flex-sm-row align-items-start align-items-sm-center gap-2">
+              <span class="filter-label">View Categories:</span>
+              <div class="d-flex flex-wrap gap-2">
+                <button type="button" class="filter-btn active" data-filter="all">All</button>
+                <button type="button" class="filter-btn" data-filter="webdev">Web Dev</button>
+                <button type="button" class="filter-btn" data-filter="python">Python</button>
+                <button type="button" class="filter-btn" data-filter="photography">Photography</button>
+              </div>
+            </div>
+
+            <div class="ie-project-list" id="projects-grid">
+
+              <article class="ie-project-row project-item" data-category="webdev">
+                <div class="ie-project-thumb">
+                  <img src="img/TaskPad.png" alt="Web Dev Project">
+                </div>
+                <div class="ie-project-body">
+                  <div class="ie-project-meta">
+                    <span class="project-cat-badge">Web Dev</span>
+                  </div>
+                  <h2 class="ie-project-title">TaskPad</h2>
+                  <p class="ie-project-desc">A simple notepad themed student task manager.</p>
+                  <div class="ie-project-tags">
+                    <span class="tech-tag">HTML5</span>
+                    <span class="tech-tag">CSS3</span>
+                    <span class="tech-tag">JS</span>
+                  </div>
+                </div>
+                <a href="https://github.com/Kommiiii/taskpad" target="_blank" class="project-action-btn">View on
+                  GitHub</a>
+              </article>
+
+              <article class="ie-project-row project-item" data-category="python">
+                <div class="ie-project-thumb">
+                  <img src="img/Minesweeper.png" alt="Python Project">
+                </div>
+                <div class="ie-project-body">
+                  <div class="ie-project-meta">
+                    <span class="project-cat-badge">Python</span>
+                  </div>
+                  <h2 class="ie-project-title">Minesweeper</h2>
+                  <p class="ie-project-desc">A classic puzzle game implemented in Python using the Pygame library.</p>
+                  <div class="ie-project-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Pygame</span>
+                  </div>
+                </div>
+                <a href="https://github.com/Kommiiii/Minesweeper-Prototype" target="_blank"
+                  class="project-action-btn">View on GitHub</a>
+              </article>
+
+              <article class="ie-project-row project-item flex-column align-items-start" data-category="photography">
+                <div class="w-100">
+                  <div class="ie-project-meta mb-2">
+                    <span class="project-cat-badge">Photography</span>
+                  </div>
+                  <h2 class="ie-project-title">My Photography Hobby</h2>
+                  <p class="ie-project-desc">Click any image below to view it in full resolution.</p>
+                </div>
+
+                <div class="gallery-grid w-100">
+                  <img src="img/Picture_1.jpg" class="gallery-thumb" onclick="openLightbox(this.src)" alt="Photo 1">
+                  <img src="img/Picture_2.jpg" class="gallery-thumb" onclick="openLightbox(this.src)" alt="Photo 2">
+                  <img src="img/Picture_3.jpg" class="gallery-thumb" onclick="openLightbox(this.src)" alt="Photo 3">
+                  <img src="img/Picture_4.jpg" class="gallery-thumb" onclick="openLightbox(this.src)" alt="Photo 4">
+                  <img src="img/Picture_5.jpg" class="gallery-thumb" onclick="openLightbox(this.src)" alt="Photo 5">
+                </div>
+              </article>
+
+            </div>
+
+            <div id="no-results" class="ie-empty-panel d-none">
+              <img src="img/icons/Critical.png" width="32" height="32" alt="Error">
+              <p>No projects match the selected category.</p>
+            </div>
+          </main>
+          <footer class="ie-status-bar">
+            <span id="ie-status-text">3 item(s)</span>
+            <span class="ie-status-zone">Local intranet</span>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <div class="os-window-container hidden" id="stage-contact">
+      <div class="window h-100 d-flex flex-column shadow-lg">
+        <div class="title-bar">
+          <div class="title-bar-text">
+            <img src="img/icons/OutlookExpress.png" width="14" height="14" alt="" class="title-bar-icon" />
+            Send Message — Outlook Express
+          </div>
+          <div class="title-bar-controls">
+            <button type="button" aria-label="Minimize" onclick="handleTaskbarClick('stage-contact')"></button>
+            <button type="button" aria-label="Maximize"></button>
+            <button type="button" aria-label="Close" onclick="closeOsWindow('stage-contact')"></button>
+          </div>
+        </div>
+        <div class="oe-menu-bar d-flex flex-wrap px-2 py-1 border-bottom">
+          <span><u>F</u>ile</span><span><u>E</u>dit</span><span><u>V</u>iew</span><span><u>I</u>nsert</span><span><u>T</u>ools</span><span><u>M</u>essage</span><span><u>H</u>elp</span>
+        </div>
+        <div class="oe-toolbar d-flex flex-wrap align-items-center gap-1 px-2 py-1 border-bottom">
+          <button type="button" class="oe-tb-btn" disabled>Send</button>
+          <button type="button" class="oe-tb-btn">Spelling</button>
+          <button type="button" class="oe-tb-btn">Attach</button>
+          <button type="button" class="oe-tb-btn">Priority</button>
+          <button type="button" class="oe-tb-btn">Sign</button>
+        </div>
+        <div class="window-body oe-window-body overflow-auto flex-grow-1 p-0">
+          <div class="oe-layout">
+            <div class="oe-compose p-3">
+              <div class="oe-compose-header">
+                <img src="img/icons/Email.png" width="16" height="16" alt="">
+                <span>New Message</span>
+              </div>
+
+              <form id="contact-form" class="oe-form" novalidate>
+                <div class="field-row-stacked mb-2">
+                  <label>Email To:</label>
+                  <div class="static-field">mitchellekyle05@gmail.com</div>
+                </div>
+                <div class="field-row-stacked mb-2">
+                  <label for="contact-name">Full Name:</label>
+                  <input type="text" id="contact-name" name="name" placeholder="Name or Organization" />
+                  <span class="field-error" id="err-name"></span>
+                </div>
+                <div class="field-row-stacked mb-2">
+                  <label for="contact-email">Email Address:</label>
+                  <input type="email" id="contact-email" name="email" placeholder="client@domain.com" />
+                  <span class="field-error" id="err-email"></span>
+                </div>
+                <div class="field-row-stacked mb-2">
+                  <label for="contact-message">Message Parameters:</label>
+                  <textarea id="contact-message" name="message" rows="4"
+                    placeholder="Provide assignment constraints or pipeline specifications..."></textarea>
+                  <span class="field-error" id="err-message"></span>
+                </div>
+                <div class="field-row mt-2">
+                  <button type="submit" id="send-btn">Send Message</button>
+                  <button type="reset">Clear</button>
+                </div>
+              </form>
+
+              <div class="mt-4 pt-3 border-top">
+                <p class="xp-label"><strong>Contact Links</strong></p>
+                <div class="d-flex flex-wrap gap-4 mt-2">
+                  <div class="contact-row">
+                    <img src="img/icons/facebook.png" width="16" alt="">
+                    <a href="https://www.facebook.com/mkd.067/" target="_blank" class="text-dark text-decoration-none">Mitch Dungo</a>
+                  </div>
+                  <div class="contact-row">
+                    <img src="img/icons/Github.png" width="16" alt="">
+                    <a href="https://github.com/Kommiiii" target="_blank"
+                      class="text-dark text-decoration-none">github.com/Kommiiii</a>
+                  </div>
+                  <div class="contact-row">
+                    <img src="img/icons/Earth.png" width="16" alt="">
+                    <span>Metro Manila, Philippines</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="lightboxModal" tabindex="-1" aria-hidden="true" style="z-index: 9999;">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="window modal-xp-window" style="width: auto; max-width: 95vw;">
+          <div class="title-bar" style="cursor: default;">
+            <div class="title-bar-text">Image Viewer</div>
+            <div class="title-bar-controls">
+              <button type="button" aria-label="Close" onclick="closeLightbox()"></button>
+            </div>
+          </div>
+          <div class="window-body text-center p-2" style="background: #333;">
+            <img id="lightbox-img" src="" style="max-width: 100%; max-height: 75vh; object-fit: contain;"
+              alt="Enlarged view">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal" id="alertModal" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="window modal-xp-window" role="alertdialog">
+          <div class="title-bar" id="modal-title-bar">
+            <div class="title-bar-text" id="alertModalLabel">System Message</div>
+            <div class="title-bar-controls"><button type="button" aria-label="Close" id="modal-close-btn"></button>
+            </div>
+          </div>
+          <div class="window-body text-center p-3">
+            <img id="modal-icon" src="img/icons/Alert.png" width="40" height="40" alt="Alert" class="mb-2">
+            <p id="modal-message" class="mb-3">System message.</p>
+            <div class="field-row justify-content-center"><button type="button" id="modal-ok-btn">OK</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand fixed-bottom xp-taskbar" aria-label="OS Taskbar">
+      <div class="container-fluid px-1">
+        <button type="button" class="start-btn me-1" id="start-btn" aria-expanded="false" aria-controls="start-menu">
+          <img src="img/icons/WindowsLogo.png" width="16" height="16" alt="">
+          <span>start</span>
+        </button>
+        <div class="taskbar-divider"></div>
+        <div class="taskbar-windows d-flex align-items-center gap-1 flex-grow-1 overflow-hidden ms-1">
+          <button type="button" class="taskbar-window-btn d-none" id="tab-stage-profile"
+            onclick="handleTaskbarClick('stage-profile')">
+            <img src="img/icons/MsWord.png" width="14" height="14" alt="">
+            <span class="taskbar-tab-label">Profile.doc</span>
+          </button>
+          <button type="button" class="taskbar-window-btn d-none" id="tab-stage-projects"
+            onclick="handleTaskbarClick('stage-projects')">
+            <img src="img/icons/InternetExplorer.png" width="14" height="14" alt="">
+            <span class="taskbar-tab-label">Portfolio.html</span>
+          </button>
+          <button type="button" class="taskbar-window-btn d-none" id="tab-stage-contact"
+            onclick="handleTaskbarClick('stage-contact')">
+            <img src="img/icons/OutlookExpress.png" width="14" height="14" alt="">
+            <span class="taskbar-tab-label">Contact.exe</span>
+          </button>
+        </div>
+        <div class="system-tray d-flex align-items-center gap-1 ms-1 flex-shrink-0">
+          <img src="img/icons/NetworkandInternet.png" width="16" height="16" alt="Online">
+          <span class="tray-clock" id="tray-clock">12:00 PM</span>
+        </div>
+      </div>
+    </nav>
+
+    <div class="start-menu" id="start-menu" hidden>
+      <div class="start-menu-header">
+        <img src="img/KyleDungo.jpg" alt="Kyle Dungo" class="start-avatar"
+          onerror="this.src='img/icons/MyDocuments.png'">
+        <span class="start-name">Kyle Dungo</span>
+      </div>
+      <div class="start-menu-body">
+        <div class="start-menu-left">
+          <a href="#" class="start-menu-item" onclick="openOsWindow('stage-profile'); closeStartMenu(); return false;">
+            <img src="img/icons/MsWord.png" width="32" height="32" alt="">
+            <div class="start-item-text">
+              <strong>Profile</strong>
+              <span>Microsoft Word</span>
+            </div>
+          </a>
+          <a href="#" class="start-menu-item" onclick="openOsWindow('stage-projects'); closeStartMenu(); return false;">
+            <img src="img/icons/InternetExplorer.png" width="32" height="32" alt="">
+            <div class="start-item-text">
+              <strong>Portfolio</strong>
+              <span>Internet Explorer</span>
+            </div>
+          </a>
+          <a href="#" class="start-menu-item" onclick="openOsWindow('stage-contact'); closeStartMenu(); return false;">
+            <img src="img/icons/OutlookExpress.png" width="32" height="32" alt="">
+            <div class="start-item-text">
+              <strong>Contact</strong>
+              <span>Outlook Express</span>
+            </div>
+          </a>
+        </div>
+        <div class="start-menu-right">
+          <a href="#" class="start-menu-item right-item" onclick="downloadCv(); closeStartMenu(); return false;">
+            <img src="img/icons/PDF.png" width="24" height="24" alt="">
+            <span>KyleDungo_CV</span>
+          </a>
+        </div>
+      </div>
+      <div class="start-menu-footer">
+        <button type="button" class="start-footer-btn" onclick="closeStartMenu()">
+          <img src="img/icons/Logout.png" width="16" height="16" alt=""> Log Off
+        </button>
+        <button type="button" class="start-footer-btn" onclick="closeStartMenu()">
+          <img src="img/icons/Exit.png" width="16" height="16" alt=""> Turn Off Computer
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
