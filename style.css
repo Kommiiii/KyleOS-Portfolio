@@ -41,7 +41,7 @@ body {
 
 /* ── DESKTOP ICONS ── */
 .desktop-icons-grid {
-  padding: 12px 10px;
+  padding: 30px 20px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -127,6 +127,16 @@ body {
   flex-grow: 1;
   min-height: 0;
 }
+
+/* Ensure the title bar itself holds them comfortably */
+.title-bar {
+  min-height: 30px !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* END UPDATE */
+
 
 .title-bar-text {
   white-space: nowrap;
@@ -610,6 +620,25 @@ body {
   flex: 1;
 }
 
+.contacts-section {
+  padding-top: 15px;
+  border-top: 1px dashed #a0a0a0;
+}
+
+/* 2. Default Desktop Layout: Horizontal Row for the links only */
+.contact-links-layout {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.contact-links-layout .contact-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
 /* ── SHARED ── */
 .filter-label {
   font-size: 11px;
@@ -717,15 +746,17 @@ textarea {
 .start-btn {
   display: inline-flex;
   align-items: center;
-  gap: 4px;
-  height: 24px;
-  padding: 0 10px 0 6px;
+  gap: 2px;
+  height: 32px;
+  padding: 0 20px 0 10px;
   background: linear-gradient(to bottom, #5cb85c 0%, #3d9e3d 40%, #2e7e2e 51%, #4aad4a 100%);
   border: 1px solid #1a5c1a;
+  margin-left: -6px;
+  border-left: none;
   border-radius: 0 8px 8px 0;
   color: #fff;
   font-family: Tahoma, sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   font-style: italic;
   cursor: pointer;
@@ -760,15 +791,15 @@ textarea {
   max-width: 160px;
   min-width: 0;
   overflow: hidden;
-  background: linear-gradient(to bottom, #3a6ea8 0%, #2a5a98 50%, #1e4a88 51%, #2a5a98 100%);
-  border: 1px solid #0a2d6e;
-  border-top-color: #5a8ec8;
-  color: #fff;
-  font-family: Tahoma, sans-serif;
-  font-size: 11px;
   cursor: pointer;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
   flex-shrink: 1;
+  background: linear-gradient(to bottom, #3c81e3 0%, #2968c2 50%, #1e52a1 51%, #2b67c2 100%) !important;
+  border: 1px solid #1a3b6b !important;
+  border-top-color: #66a3eb !important;
+  border-left-color: #66a3eb !important;
+
+  color: #ffffff !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
 }
 
 .taskbar-tab-label {
@@ -780,15 +811,16 @@ textarea {
 }
 
 .taskbar-window-btn.active {
-  background: linear-gradient(to bottom, rgba(4, 14, 36, 0.95) 0%, rgba(8, 28, 62, 0.9) 50%, rgba(3, 12, 30, 0.98) 100%);
-  border-style: inset;
-  border-color: #020810 #061428 #1a3a6a #041020;
-  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.8);
-  color: #f4f8ff;
+  background: linear-gradient(to bottom, #1e3a66 0%, #102240 100%) !important;
+  border-width: 1px !important;
+  border-style: solid !important;
+  border-color: #0b162b #3a6ea8 #3a6ea8 #0b162b !important;
+  box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.7) !important;
+  color: #e0eaf5 !important;
 }
 
 .taskbar-window-btn.active .taskbar-tab-label {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9) !important;
 }
 
 .taskbar-window-btn img {
@@ -950,15 +982,18 @@ textarea {
   border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* ── MOBILE LAYOUT REVERT ── */
+/* ── MOBILE LAYOUT ── */
 @media (max-width: 768px) {
   .os-window-container {
-    height: 80vh !important;
-    top: 45% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    width: 95vw !important;
-    max-width: 95vw !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    max-width: 100vw !important;
+    top: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
   }
 
   .os-window-container.is-positioned {
@@ -978,17 +1013,40 @@ textarea {
 
   .oe-layout {
     flex-direction: column;
+    height: 100%;
+  }
+z
+  .oe-compose {
+    overflow-y: auto !important;
+  }
+
+  .oe-form {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-bottom: 10px;
+  }
+
+  .oe-form textarea {
+    flex-grow: 1;
+    min-height: 120px;
+    resize: none;
+    margin-bottom: 12px;
+  }
+
+  .oe-form button {
+    margin-top: auto;
+    width: 100%;
+    padding: 8px;
+  }
+
+  .contact-links-layout {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 15px !important;
+  }
+
+  .contacts-section {
+    padding-bottom: 25px !important; 
   }
 }
-
-@media (max-width: 400px) {
-  .taskbar-window-btn {
-    max-width: 40px;
-    justify-content: center;
-  }
-
-  .taskbar-tab-label {
-    display: none;
-  }
-}
-
